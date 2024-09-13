@@ -50,7 +50,6 @@ function UserFormSelectorInner() {
           <a href={linkForAction} className="font-medium text-blue-600 hover:underline">
             {action}
           </a>
-          .
         </p>
       </div>
     </main>

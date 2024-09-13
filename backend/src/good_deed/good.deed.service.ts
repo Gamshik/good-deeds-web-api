@@ -47,7 +47,7 @@ export class GoodDeedService implements IGoodDeedService {
         const start = (pagingParam.currentPage - 1) * pagingParam.pageSize ;
         const end = start + Number(pagingParam.pageSize);
         const slicedGoodDeedsArray = userGoodDeeds.slice(start, end);
-    
+
         const metaData = new MetaData(pagingParam.pageSize, pagingParam.currentPage, userGoodDeeds.length)
 
         this.goodDeedList.splice(0)

@@ -36,6 +36,8 @@ export class UserController {
       return { Message: loginResult.Message };
     }
 
+    res.cookie('Token', 'loginResult', { httpOnly: true, sameSite: 'none' })
+    console.log(res.getHeaders());
     res.status(HttpStatus.OK);
     return { Jwt: loginResult.Jwt, UserId: loginResult.UserId };
   }

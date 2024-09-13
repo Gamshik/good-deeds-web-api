@@ -33,7 +33,7 @@ import { UserFriend } from './entities/db_entities/user.friend';
         password: configService.get<string>('POSTGRES_PASSWORD'),
         database: configService.get<string>('POSTGRES_DB_NAME'),
         entities: [User, GoodDeed, UserFriend],
-        synchronize: false,
+        synchronize: true,
         migrations: ['dist/migration/*.js'],
         migrationsTableName: 'migrations',
       }),

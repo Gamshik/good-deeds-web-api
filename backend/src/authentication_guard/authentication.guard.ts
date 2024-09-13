@@ -3,6 +3,7 @@
 import { CanActivate, ExecutionContext, ForbiddenException, Injectable, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { JWT_SECURITY_KEY } from '../constants/jwt.security.key';
+import { Request } from 'express';
 
 @Injectable()
 export class AuthenticationGuard implements CanActivate {
@@ -28,6 +29,7 @@ export class AuthenticationGuard implements CanActivate {
 
   private getJwtTokenFromRequest(request: Request): string | null {
     const authorizationField = request.headers['authorization']; 
+    console.log(request.cookies['Token']);
 
     if (!authorizationField){
       return null;
